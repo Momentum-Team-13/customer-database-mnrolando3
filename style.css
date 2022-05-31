@@ -1,0 +1,39 @@
+header {
+    font-family: Arial;
+}
+
+body {
+    font-family: Arial;
+}
+
+.customers {
+    display: flex;
+    flex-wrap: wrap;
+    border: 5px solid blue;
+}
+
+.person {
+    border: 5px solid yellow;
+}
+
+.name {
+    text-align: center;
+    border: 5px solid red;
+}
+
+.email {
+    text-align: center;
+    font-size: x-small;
+    color: gray;
+    border: 5px solid green;
+}
+
+.info {
+    text-align: center;
+    font-size: small;
+    border: 5px solid purple;
+}
+
+.picture {
+    
+}
