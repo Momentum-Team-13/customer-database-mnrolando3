@@ -21,11 +21,6 @@ for (let customer of customers) {
     emailElement.innerText = customer.email
     personElement.appendChild(emailElement)
 
-    // let streetElement = document.createElement('div')
-    // streetElement.classList.add('location')
-    // streetElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
-    // personElement.appendChild(streetElement)
-
     let locationElement = document.createElement('div')
     let stateAbbr = (nameToAbbr(customer.location.state))
     locationElement.classList.add('location')
