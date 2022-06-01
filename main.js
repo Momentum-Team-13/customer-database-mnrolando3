@@ -26,10 +26,10 @@ for (let customer of customers) {
     streetElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
     personElement.appendChild(streetElement)
 
-    let cityElement = document.createElement('span')
-    cityElement.classList.add('location')
-    cityElement.innerText = customer.location.city
-    personElement.appendChild(cityElement)
+    let locationElement = document.createElement('span')
+    locationElement.classList.add('location')
+    locationElement.innerText = `${customer.location.city}, ${customer.location.postcode}`
+    personElement.appendChild(locationElement)
 
     // for (let state of usStates) {
     //     let stateElement = document.createElement('span')
@@ -40,13 +40,14 @@ for (let customer of customers) {
     //     personElement.appendChild(stateElement)
     // }
 
-    let zipElement = document.createElement('span')
-    zipElement.classList.add('location')
-    zipElement.innerText = ` ${customer.location.postcode}`
-    personElement.appendChild(zipElement)
+    // let zipElement = document.createElement('span')
+    // zipElement.classList.add('location')
+    // zipElement.innerText = ` ${customer.location.postcode}`
+    // personElement.appendChild(zipElement)
 
     let dobElement = document.createElement('div')
     dobElement.classList.add('dates')
+    // moment. format("MM/DD/YY")
     dobElement.innerText = `DOB: ${customer.dob.date}`
     personElement.appendChild(dobElement)
 
