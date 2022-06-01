@@ -6,7 +6,7 @@ body {
     font-family: Arial;
 }
 
-.customers {
+#customers {
     display: flex;
     flex-wrap: wrap;
     border: 5px solid blue;
@@ -14,6 +14,11 @@ body {
 
 .person {
     border: 5px solid yellow;
+}
+
+.picture {
+    width: 100px;
+    border: 5px solid black;
 }
 
 .name {
@@ -28,12 +33,14 @@ body {
     border: 5px solid green;
 }
 
-.info {
+.location {
     text-align: center;
     font-size: small;
     border: 5px solid purple;
 }
 
-.picture {
-    
+.dates {
+    text-align: center;
+    font-size: small;
+    border: 5px solid purple;
 }
