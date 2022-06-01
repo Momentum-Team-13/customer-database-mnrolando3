@@ -28,7 +28,7 @@ body {
 
 .name {
     text-align: center;
-    margin: 0px;
+    margin: 5px;
 }
 
 .email {
@@ -40,6 +40,7 @@ body {
 .location {
     text-align: center;
     font-size: small;
+    margin: 5px;
 }
 
 .dates {
