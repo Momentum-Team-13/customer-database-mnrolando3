@@ -30,17 +30,19 @@ for (let customer of customers) {
     let stateAbbr = (nameToAbbr(customer.location.state))
     locationElement.classList.add('location')
     locationElement.innerText = `${customer.location.street.number} ${customer.location.street.name} \b\r ${customer.location.city}, ${stateAbbr} ${customer.location.postcode}`
+    // \b\r\ creates a line break within the location element's inner text
     personElement.appendChild(locationElement)
 
     let dobElement = document.createElement('div')
+    let dobFormat = moment(customer.dob.date).format("MMM D, YYYY")
     dobElement.classList.add('dates')
-    // moment().format("MMM Do YY")
-    dobElement.innerText = `DOB: ${customer.dob.date}`
+    dobElement.innerText = `DOB: ${dobFormat}`
     personElement.appendChild(dobElement)
 
     let regElement = document.createElement('div')
+    let regFormat = moment(customer.registered.date).format("MMM D, YYYY")
     regElement.classList.add('dates')
-    regElement.innerText = `Customer since: ${customer.registered.date}`
+    regElement.innerText = `Customer since: ${regFormat}`
     personElement.appendChild(regElement)
 
     customerList.appendChild(personElement)
