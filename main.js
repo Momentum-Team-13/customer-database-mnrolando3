@@ -18,13 +18,32 @@ for (let customer of customers) {
 
     let emailElement = document.createElement('div')
     emailElement.classList.add('email')
-    emailElement.innerText = `${customer.email}`
+    emailElement.innerText = customer.email
     personElement.appendChild(emailElement)
 
-    let locationElement = document.createElement('div')
-    locationElement.classList.add('location')
-    locationElement.innerText = `${customer.location}`
-    personElement.appendChild(locationElement)
+    let streetElement = document.createElement('div')
+    streetElement.classList.add('location')
+    streetElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
+    personElement.appendChild(streetElement)
+
+    let cityElement = document.createElement('span')
+    cityElement.classList.add('location')
+    cityElement.innerText = customer.location.city
+    personElement.appendChild(cityElement)
+
+    // for (let state of usStates) {
+    //     let stateElement = document.createElement('span')
+    //     stateElement.classList.add('location')
+    //     if (customer.state === state.name) {
+    //    return stateElement.innerText = state.abbreviation
+    // };
+    //     personElement.appendChild(stateElement)
+    // }
+
+    let zipElement = document.createElement('span')
+    zipElement.classList.add('location')
+    zipElement.innerText = ` ${customer.location.postcode}`
+    personElement.appendChild(zipElement)
 
     let dobElement = document.createElement('div')
     dobElement.classList.add('dates')
@@ -33,9 +52,8 @@ for (let customer of customers) {
 
     let regElement = document.createElement('div')
     regElement.classList.add('dates')
-    regElement.innerText = `Customer Registered: ${customer.registered.date}`
+    regElement.innerText = `Customer Since ${customer.registered.date}`
     personElement.appendChild(regElement)
 
     customerList.appendChild(personElement)
-    //appends report, including content and image, to weatherList, which is an existing element on the page because it's outside the for loop
 }
