@@ -21,39 +21,26 @@ for (let customer of customers) {
     emailElement.innerText = customer.email
     personElement.appendChild(emailElement)
 
-    let streetElement = document.createElement('div')
-    streetElement.classList.add('location')
-    streetElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
-    personElement.appendChild(streetElement)
+    // let streetElement = document.createElement('div')
+    // streetElement.classList.add('location')
+    // streetElement.innerText = `${customer.location.street.number} ${customer.location.street.name}`
+    // personElement.appendChild(streetElement)
 
-    let locationElement = document.createElement('span')
+    let locationElement = document.createElement('div')
+    let stateAbbr = (nameToAbbr(customer.location.state))
     locationElement.classList.add('location')
-    locationElement.innerText = `${customer.location.city}, ${customer.location.postcode}`
+    locationElement.innerText = `${customer.location.street.number} ${customer.location.street.name} \b\r ${customer.location.city}, ${stateAbbr} ${customer.location.postcode}`
     personElement.appendChild(locationElement)
-
-    // for (let state of usStates) {
-    //     let stateElement = document.createElement('span')
-    //     stateElement.classList.add('location')
-    //     if (customer.state === state.name) {
-    //    return stateElement.innerText = state.abbreviation
-    // };
-    //     personElement.appendChild(stateElement)
-    // }
-
-    // let zipElement = document.createElement('span')
-    // zipElement.classList.add('location')
-    // zipElement.innerText = ` ${customer.location.postcode}`
-    // personElement.appendChild(zipElement)
 
     let dobElement = document.createElement('div')
     dobElement.classList.add('dates')
-    // moment. format("MM/DD/YY")
+    // moment().format("MMM Do YY")
     dobElement.innerText = `DOB: ${customer.dob.date}`
     personElement.appendChild(dobElement)
 
     let regElement = document.createElement('div')
     regElement.classList.add('dates')
-    regElement.innerText = `Customer Since ${customer.registered.date}`
+    regElement.innerText = `Customer since: ${customer.registered.date}`
     personElement.appendChild(regElement)
 
     customerList.appendChild(personElement)
